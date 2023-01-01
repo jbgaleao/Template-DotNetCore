@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 using Template.Data.Context;
+using Template.IoC;
 
 namespace Template
 {
@@ -24,6 +25,7 @@ namespace Template
         {
             services.AddControllersWithViews();
             services.AddDbContext<TemplateContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("TemplateDB")).EnableSensitiveDataLogging());
+            NativeInjector.RegisterServicos(services);
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
