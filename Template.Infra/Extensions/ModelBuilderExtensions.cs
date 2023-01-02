@@ -17,7 +17,10 @@ namespace Template.Data.Extensions
                     {
                         Id = Guid.Parse("c0d05997-e91f-4c57-a205-565e2d95c869"),
                         Name = "User Default",
-                        Email = "userdefault@template.com"
+                        Email = "userdefault@template.com",
+                        DateCreated = new DateTime(2022,05,14),
+                        DateUpdated = null,
+                        IsDeleted = false
                     });
             return builder;
         }
